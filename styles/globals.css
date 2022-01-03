@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply bg-blue-50 font-semibold font-sans;
+}
+
+main {
+  @apply p-10 md:p-20;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-sky-900;
+}
+
+p {
+  @apply text-gray-700;
+}
