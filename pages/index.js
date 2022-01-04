@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import Nav from '../components/Nav.jsx';
 import axios from 'axios';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Cards from '../components/Cards.jsx';
 const apiKey = '95ec01f8b61f542bd3d75bc4a0bf4394';
 
 export default function Home() {
   const [cities, setCities] = useState([]);
+  console.log(cities.length);
 
   function onClose(id) {
     setCities((oldCities) => oldCities.filter((city) => city.id !== id));
+    console.log(cities.length);
   }
 
   async function onSearch(cityToSearch) {
     try {
       let jsonCity = await axios.get(
         `http://api.openweathermap.org/data/2.5/weather?q=${cityToSearch}&units=metric&appid=${apiKey}`
-        // http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=95ec01f8b61f542bd3d75bc4a0bf4394
       );
       let cityData = jsonCity.data;
 
@@ -33,9 +35,21 @@ export default function Home() {
         longitud: cityData.coord.lon,
       };
 
-      setCities((oldCities) => [...oldCities, city]);
+      cities.some((e) => e.name === city.name)
+        ? Swal.fire({
+            title: 'Error!',
+            text: "You've already searched for that city!",
+            icon: 'warning',
+            confirmButtonText: 'Alright',
+          })
+        : setCities((oldCities) => [...oldCities, city]);
     } catch (error) {
-      alert('The city was not found');
+      Swal.fire({
+        title: 'Error!',
+        text: 'The city was not found.',
+        icon: 'error',
+        confirmButtonText: 'Alright',
+      });
     }
   }
 

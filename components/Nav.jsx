@@ -5,7 +5,7 @@ export default function Nav({ onSearch }) {
   const [city, setCity] = useState('');
 
   return (
-    <nav className="bg-white z-50 flex justify-around items-center sticky w-full top-0 px-4 py-4 shadow-lg md:px-12 md:justify-between">
+    <nav className="animate__animated animate__fadeIn bg-white z-50 flex justify-around items-center sticky w-full top-0 px-4 py-4 shadow-lg md:px-12 md:justify-between">
       <div className="flex items-center">
         <TiWeatherPartlySunny className="mr-4 text-3xl text-sky-900" />
         <h3 className="hidden md:block font-bold text-xl">
