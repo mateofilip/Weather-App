@@ -1,12 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 @import '@sweetalert2/theme-bootstrap-4/bootstrap-4.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0c4a6e;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
 html {
-  @apply bg-blue-50 font-semibold font-sans;
+  @apply bg-gradient-to-r from-sky-200 via-indigo-300 to-blue-400 font-semibold font-sans;
 }
 
 main {

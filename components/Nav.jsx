@@ -26,7 +26,7 @@ export default function Nav({ onSearch }) {
             placeholder="🔍 Search for a City!"
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="py-2 px-4 outline-none bg-gray-200 rounded-md font-sans font-bold text-sky-900"
+            className="py-2 px-4 outline-none bg-gray-200 rounded-md font-sans font-semibold text-sky-900 focus:placeholder:invisible"
           />
         </form>
       </div>

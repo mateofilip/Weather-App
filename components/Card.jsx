@@ -1,10 +1,9 @@
 import { AiFillCloseCircle } from 'react-icons/ai';
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Card({ min, max, name, img, onClose, temp, id }) {
   return (
-    <article className="animate__animated animate__fadeIn shadow-lg w-full h-96 bg-slate-200 my-4 rounded-md flex flex-col justify-center items-center p-4 transition-shadow duration-500 ease-in-out max-w-xs hover:shadow-xl">
+    <article className="animate__animated animate__fadeIn shadow-lg w-full bg-white my-4 rounded-md flex flex-col justify-center items-center p-4 transition-all duration-500 ease-in-out max-w-xs hover:scale-105 hover:shadow-xl">
       <button
         onClick={onClose}
         className="text-red-400 text-3xl m-2 transition-colors duration-500 ease-in-out ml-auto hover:text-red-600"
@@ -12,18 +11,20 @@ export default function Card({ min, max, name, img, onClose, temp, id }) {
         <AiFillCloseCircle />
       </button>
 
-      <Image
-        src={'http://openweathermap.org/img/wn/' + img + '@2x.png'}
-        width="133"
-        height="133"
-        alt={name}
-      />
+      <div className="bg-gray-900 rounded-full grid place-items-center shadow-lg shadow-gray-300 m-4">
+        <Image
+          src={'http://openweathermap.org/img/wn/' + img + '@2x.png'}
+          width="100"
+          height="100"
+          alt={name}
+        />
+      </div>
 
-      <h1 className="text-2xl">{name}</h1>
+      <h1 className="text-2xl m-4">{name}</h1>
 
-      <span className="text-5xl my-4">{temp}&deg;</span>
+      <span className="text-5xl">{temp}&deg;</span>
 
-      <p className="text-2xl font-light">
+      <p className="text-2xl font-light m-4">
         {min}&deg; / {max}&deg;
       </p>
     </article>

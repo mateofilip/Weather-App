@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: 'Urbanist, Arial, sans-serif',
+        sans: 'Manrope, Arial, sans-serif',
       },
     },
   },
