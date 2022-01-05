@@ -1,6 +1,6 @@
 import Card from './Card';
 import Image from 'next/image';
-import City from '../images/City.svg';
+import City from '../assets/City.svg';
 
 export default function Cards({ cities, onClose }) {
   return (

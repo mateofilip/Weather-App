@@ -8,11 +8,9 @@ const apiKey = '95ec01f8b61f542bd3d75bc4a0bf4394';
 
 export default function Home() {
   const [cities, setCities] = useState([]);
-  console.log(cities.length);
 
   function onClose(id) {
     setCities((oldCities) => oldCities.filter((city) => city.id !== id));
-    console.log(cities.length);
   }
 
   async function onSearch(cityToSearch) {
