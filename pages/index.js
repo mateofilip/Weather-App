@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../components/Header.jsx';
 import Nav from '../components/Nav.jsx';
 import axios from 'axios';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -65,6 +66,8 @@ export default function Home() {
 
   return (
     <>
+      <Header />
+
       <Nav onSearch={onSearch} />
 
       <main>
