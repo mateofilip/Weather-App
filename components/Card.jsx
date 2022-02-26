@@ -22,10 +22,10 @@ export default function Card({ min, max, name, img, onClose, temp, id }) {
 
       <h1 className="text-2xl m-4">{name}</h1>
 
-      <span className="text-5xl">{temp}&deg;</span>
+      <span className="text-5xl">{temp}&deg;C</span>
 
       <p className="text-2xl font-light m-4">
-        {min}&deg; / {max}&deg;
+        {min}&deg;C / {max}&deg;C
       </p>
     </article>
   );
